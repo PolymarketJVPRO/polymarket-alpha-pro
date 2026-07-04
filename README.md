@@ -1,40 +1,27 @@
-# Polymarket Alpha Pro
+# Alpha Trading Intelligence / Polymarket Alpha Pro
 
-Dashboard operable para escanear mercados de Polymarket, calcular score y generar señales: BUY YES / BUY NO / NO TRADE.
+Dashboard inicial en Streamlit para escanear mercados de Polymarket, calcular un Opportunity Score y clasificar señales como BUY YES / WATCHLIST / NO TRADE.
 
-## Uso local en Windows
+## Ejecutar local
 
-1. Instala Python desde https://www.python.org/downloads/ y marca **Add Python to PATH**.
-2. Abre la carpeta del proyecto.
-3. Ejecuta `install_windows.bat`.
-4. Ejecuta `run_windows.bat`.
+```bash
+pip install -r requirements.txt
+streamlit run dashboard.py
+```
 
-## Despliegue en Render
+## Render
 
-1. Sube todos estos archivos al repositorio de GitHub.
-2. En Render: New > Web Service.
-3. Conecta el repositorio.
-4. Usa estos comandos:
+Build Command:
 
-Build command:
 ```bash
 pip install -r requirements.txt
 ```
 
-Start command:
+Start Command:
+
 ```bash
-streamlit run app/main.py --server.port $PORT --server.address 0.0.0.0
+streamlit run dashboard.py --server.port=$PORT --server.address=0.0.0.0
 ```
 
-## Qué hace v1
-
-- Descubre mercados activos de Polymarket.
-- Filtra por volumen y liquidez.
-- Calcula score 0-100.
-- Clasifica BUY YES / BUY NO / NO TRADE.
-- Exporta CSV.
-- Incluye watchlist manual.
-
-## Nota importante
-
-Esto no es asesoría financiera. El score ayuda a filtrar oportunidades, pero ninguna señal garantiza ganancias.
+## Nota
+Herramienta educativa. No es asesoría financiera.
